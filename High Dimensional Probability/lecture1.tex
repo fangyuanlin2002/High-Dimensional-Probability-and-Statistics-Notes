@@ -1,0 +1,21 @@
+\documentclass[../main]{subfiles}
+
+\begin{document}
+
+\section{Big Data}
+There are two notions of big data: \begin{itemize}
+  \item The number of observations (data points) is big. e.g. the income of 3,000,000 residents. However, the dimension of the data is $1$.
+  \item The number of dimensions (parameters) is big. e.g. Images of people have a lot of pixels and each pixel is a parameter.
+  \item \item Text, sound, video, genome, medical history are all high dimensional observations.
+\end{itemize}
+
+\begin{itemize}
+  \item The number of observations is usually not a problem but the number of dimensions is usually more problematic. Empiricaly, it is exponentially harder to deal with large number of dimensions.
+  Statistics tells us that more data points only help. Why?
+  \item To demonstrate the above point, consider Monte-Carlo Integration. 
+  \[
+    \int_{0}^1\dots \int_0^1 f(x_1,\dots,x_d)dx_1\dots x_d = \int_{(0,1)^d}f(x)dx
+  \]
+\end{itemize}
+
+\end{document}

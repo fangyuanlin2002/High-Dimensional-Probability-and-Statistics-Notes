@@ -1,0 +1,116 @@
+\documentclass[12pt, openany]{book}
+\usepackage{amsmath, amssymb, amsthm, amsfonts}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{forest}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.49998pt}
+\usepackage{geometry}
+\usepackage{subfiles} % For multiple file management
+\usepackage{titlesec} % For customizing titles
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usetikzlibrary{positioning} % Include the positioning library
+\usepackage{braket} % For \ket notation
+\geometry{a4paper, margin=1in}
+\titleformat{\section}[block]{\normalfont\Large\bfseries\raggedright}{\thesection}{1em}{}
+
+\titleformat{\subsection}[block]{\normalfont\large\bfseries\raggedright}{\thesubsection}{1em}{}
+
+% Define Theorem styles
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{proposition}
+\newtheorem*{proposition*}{proposition}
+\newtheorem{corollary}[theorem]{corollary}
+\newtheorem*{corollary*}{corollary}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{remark*}{remark}
+
+% Define colors
+\definecolor{myblue}{RGB}{0, 102, 204}
+\definecolor{mygreen}{RGB}{0, 153, 0}
+\definecolor{mylightgreen}{RGB}{144, 238, 144}
+\definecolor{myred}{RGB}{204, 0, 0}
+\definecolor{mylightblue}{RGB}{210, 230, 255}
+
+% Customize headers and footers
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+
+% Customize hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=myblue,
+    citecolor=mygreen,
+    filecolor=myred,
+    urlcolor=myblue,
+}
+
+% Define a custom tcolorbox
+\newtcolorbox{ybbox}[2][]{colback=yellow!10!white, colframe=yellow!50!black, title=#2, #1}
+% green box
+\newtcolorbox{gbox}[2][]{colback=mylightgreen, colframe=mygreen, title=#2, breakable, #1}
+% blue boxc
+
+\newtcolorbox{bbox}[2][]{colback=mylightblue, colframe=myblue, title=#2, breakable, #1}
+% Pink
+\definecolor{mypinklight}{RGB}{255, 230, 230}
+\definecolor{mypinkdark}{RGB}{255, 105, 180}
+% Define a custom pink tcolorbox
+\newtcolorbox{pbox}[2][]{colback=mypinklight, colframe=mypinkdark, title=#2, breakable, #1}
+
+
+% Redefine chapter heading to remove "Chapter" text and number
+\titleformat{\chapter}[display]
+  {\normalfont\Huge\bfseries}{}{0pt}{\Huge}
+% New command
+\renewcommand{\S}{\mathcal{S}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\Z}{\mathcal{Z}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\E}{E}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bZ}{\mathbb{Z}}
+\renewcommand{\H}{\mathcal{H}}
+\newcommand{\p}{p}
+\newcommand{\I}{I}
+\newcommand{\D}{D}
+\title{High Dimensional Probability Notes}
+\author{Fangyuan Lin}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+\subfile{./High Dimensional Probability/lecture1.tex}
+\end{document}

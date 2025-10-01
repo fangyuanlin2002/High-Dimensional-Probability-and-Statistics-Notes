@@ -1,0 +1,115 @@
+\documentclass[../main]{subfiles}
+\title{Common Derivatives}
+\author{Fangyuan Lin\\
+\hyperref[website]{https://fangyuanlin2002.github.io/}}
+\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Remarks}
+\begin{itemize}
+    \item Find it annoying to always forget the common multivariate derivatives? Me too.
+    \item All variables are assumed to be vectors of appropriate dimensions and $\vec x$ is written as $x$ for convenience. 
+\end{itemize}
+\section{Common Derivatives}
+
+\subsection{Linear Form}
+\begin{bbox}{Linear Form}
+    Let 
+    \[
+    f(x) = a^T x.
+    \]
+    Then
+    \[
+    \nabla a^T x = a
+    \]
+
+    \begin{proof}
+        \begin{align*}
+            f(x) &= \sum_i a_i x_i\\
+            \frac{\partial f}{\partial x_i}&=a_i
+        \end{align*}
+    \end{proof}
+\end{bbox}
+
+\subsection{Affine Function}
+\begin{bbox}{Affine Function}
+    Let 
+    \[
+    f(x) = Ax + b
+    \]
+    Then 
+    \[
+    J_f(x) = A
+    \]
+    \begin{proof}
+        \begin{align*}
+            f_i(x) &= \sum_jA_{ij}x_j + b_i\\
+            \frac{\partial f_i}{\partial x_j} &= A_{ij}
+        \end{align*}
+    \end{proof}
+\end{bbox}
+\subsection{Bilinear Form / Inner Product}
+
+\begin{bbox}{Bilinear Form}
+    Let 
+    \[
+    f(x, y) = x^T A y
+    \]
+    Then 
+    \[
+    \nabla_x f = Ay, \quad \nabla_y f = A^T x
+    \]
+    \begin{proof}
+        Fix y. Then 
+        \begin{align*}
+            f(x) &= \sum_i x_i (Ay)_i\\
+            \frac{\partial f}{\partial x_i} &= (Ay)_i
+        \end{align*}
+        Fix x. Then 
+        \begin{align*}
+            f(y) &= \sum_i (x^T A)_i y_i\\
+            \frac{\partial f}{\partial y_i} &= (x^T A)_i\\
+            \nabla_y f&= (x^TA)^T = A^T x
+        \end{align*}
+    \end{proof}
+\end{bbox}
+\subsection{Quadratic Form}
+\begin{bbox}{Quadratic Form}
+     Let 
+    \[
+    f(x) = x^T A x
+    \]
+    Then 
+    \[
+    \nabla f = (A+A^T)x
+    \]
+    \begin{align*}
+            f(x) &= \sum_i x_i (Ax)_i\\
+            &= \sum_i x_i (\sum_{j}A_{ij}x_j)\\
+            &= \sum_i\sum_{j}x_{i}A_{ij}x_j\\
+            \frac{\partial f}{\partial x_k} &= \sum_{j\neq k}A_{kj}x_j + 2A_{kk}x_{k} + \sum_{i\neq k}A_{ik}x_{i}\\
+            &= (Ax)_k + (A^Tx)_k
+        \end{align*}
+\end{bbox}
+
+\subsection{Squared Norm}
+\begin{bbox}{Squared Norm}
+    Let 
+    \[
+    f(x) = \|x\|^2 = x^T x.
+    \]
+    Then
+    \[
+    \nabla f (x) = 2x
+    \]
+    \begin{proof}
+        Note that his is a special case of quadratic form with $A = I$. Also one can consider:
+        \begin{align*}
+        f(x) &= \sum_{i}x_i^2\\
+        \frac{\partial f}{\partial x_i} &= 2x_i
+    \end{align*}
+    \end{proof}
+    
+\end{bbox}
+\end{document}
